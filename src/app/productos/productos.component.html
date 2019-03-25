@@ -1,12 +1,28 @@
 <h2>Listado de todos los productos</h2>
+sfdsf
+{{ producto.nombre }}
+sdfsdfsd
 <table>
   <thead>
     <tr>
-      <td>Producto</td>
-      <td>Descripción</td>
-      <td>Recio</td>
-      <td>Editar</td>
-      <td>Eliminar</td>
+      <th>Producto</th>
+      <th>Descripción</th>
+      <th>Recio</th>
+      <th>Gestionar</th>
     </tr>
   </thead>
+  <tbody>
+    <tr>
+      <td>{{ producto.nombre }}</td>
+      <td>{{ producto.descripcion }}</td>
+      <td>{{ producto.precio }}</td>
+      <td>Editar/Eliminar</td>
+    </tr>
+    <tr>
+      <td>Eder</td>
+      <td>Eder</td>
+      <td>Eder</td>
+      <td>Eder</td>
+    </tr>
+  </tbody>
 </table>
