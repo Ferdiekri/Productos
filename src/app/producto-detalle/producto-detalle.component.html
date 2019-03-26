@@ -1,0 +1,21 @@
+<div *ngIf="producto">
+    <h2>Detalle del producto seleccionado</h2>
+  <table>
+    <tr>
+      <td>ID:</td>
+      <td><input [(ngModel)]="producto.id" placeholder="id" /></td>
+    </tr>
+    <tr>
+      <td>NOMBRE:</td>
+      <td><input [(ngModel)]="producto.nombre" placeholder="name" /></td>
+    </tr>
+    <tr>
+      <td>DESCRIPCIÓN:</td>
+      <td><input [(ngModel)]="producto.descripcion" placeholder="descrpicion" /></td>
+    </tr>
+    <tr>
+      <td>PRECIO:</td>
+      <td><input [(ngModel)]="producto.precio" placeholder="precio" /></td>
+    </tr>
+  </table>
+</div>

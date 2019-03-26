@@ -1,28 +1,34 @@
 <h2>Listado de todos los productos</h2>
-sfdsf
-{{ producto.nombre }}
-sdfsdfsd
 <table>
   <thead>
     <tr>
+      <th>#</th>
       <th>Producto</th>
       <th>Descripción</th>
-      <th>Recio</th>
+      <th>Precio</th>
       <th>Gestionar</th>
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td>{{ producto.nombre }}</td>
+    <!--<tr>
+      <td>{{ producto.nombre | uppercase }}</td>
       <td>{{ producto.descripcion }}</td>
       <td>{{ producto.precio }}</td>
-      <td>Editar/Eliminar</td>
-    </tr>
-    <tr>
-      <td>Eder</td>
-      <td>Eder</td>
-      <td>Eder</td>
-      <td>Eder</td>
+      <td>E - X</td>
+    </tr>-->
+    <tr *ngFor="let producto of productos" [class.selected]="producto === productoSeleccionado" (click)="onSelect(producto)">
+      <td>{{producto.id}} </td>
+      <td>{{producto.nombre}}</td>
+      <td>{{producto.descripcion}}</td>
+      <td>{{producto.precio}}€</td>
+      <td>
+        <img src="../../assets/images/edit_20.png" alt="Editar">&nbsp;&nbsp;
+        <img src="../../assets/images/delete_20.png" alt="Editar">
+      </td>
     </tr>
   </tbody>
 </table>
+
+<hr><hr>
+
+<app-producto-detalle [producto]="productoSeleccionado"></app-producto-detalle>
