@@ -10,13 +10,8 @@
     </tr>
   </thead>
   <tbody>
-    <!--<tr>
-      <td>{{ producto.nombre | uppercase }}</td>
-      <td>{{ producto.descripcion }}</td>
-      <td>{{ producto.precio }}</td>
-      <td>E - X</td>
-    </tr>-->
-    <tr *ngFor="let producto of productos" [class.selected]="producto === productoSeleccionado" (click)="onSelect(producto)">
+    <tr *ngFor="let producto of productos" [class.selected]="producto === productoSeleccionado"
+      (click)="onSelect(producto)">
       <td>{{producto.id}} </td>
       <td>{{producto.nombre}}</td>
       <td>{{producto.descripcion}}</td>
@@ -28,7 +23,7 @@
     </tr>
   </tbody>
 </table>
-
-<hr><hr>
+<br>
+<hr>
 
 <app-producto-detalle [producto]="productoSeleccionado"></app-producto-detalle>

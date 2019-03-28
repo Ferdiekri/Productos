@@ -1,0 +1,12 @@
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { ProductosComponent }      from './productos/productos.component';
+
+const routes: Routes = [
+  { path: 'productos', component: ProductosComponent }
+];
+
+@NgModule({
+  exports: [ RouterModule ]
+})
+export class AppRoutingModule {}

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Producto } from '../producto';
-import { PRODUCTOS } from '../mock-productos';
+import { ProductoService } from '../producto.service';
 
 @Component({
   selector: 'app-productos',
@@ -10,23 +10,21 @@ import { PRODUCTOS } from '../mock-productos';
 
 export class ProductosComponent implements OnInit {
 
-    productos = PRODUCTOS;
-  /*producto: Producto =  {
-    id: 1,
-    nombre: 'Leche',
-    descripcion: 'Cosa blanca para beber.',
-    precio: 1
-  };*/
-
   productoSeleccionado: Producto;
-  onSelect(producto: Producto): void {
-    this.productoSeleccionado = producto;
-  }
-  
+  productos: Producto[];
 
-  constructor() { }
+  constructor(private productoService: ProductoService) { }
 
   ngOnInit() {
+    this.getProductos();
   }
 
+  onSelect(producto: Producto): void {
+    this.productoSeleccionado = producto;
+  }  
+  
+  getProductos(): void {
+    this.productoService.getProductos()
+      .subscribe(productos => this.productos = productos);
+  }
 }
