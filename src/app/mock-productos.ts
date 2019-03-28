@@ -11,4 +11,4 @@ export const PRODUCTOS: Producto[] = [
   { id: 8, nombre: 'Refresco', descripcion: 'Líquido complementario que está muy rico.', precio:80 },
   { id: 9, nombre: 'Bizcocho', descripcion: 'Postre blandito para después de comer.', precio:90 }
 ];
-//console.log(PRODUCTOS);
+console.log(PRODUCTOS);
